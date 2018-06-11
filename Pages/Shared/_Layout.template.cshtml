@@ -1,26 +1,26 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- CSS -->
-  </head>
+  <title>LeanAspNetCore - @ViewData["Title"]</title>
 
-  <body>
+</head>
 
-    @await Html.PartialAsync("_Header")
-    
-    <main role="main" class="container">
+<body>
 
-      @RenderBody()
+  @await Html.PartialAsync("_Header")
 
-    </main>
+  <main role="main" class="container">
 
-    <!-- JS -->
+    @await Html.PartialAsync("_Title")
 
+    @RenderBody()
 
-  </body>
+  </main>
+
+</body>
 </html>

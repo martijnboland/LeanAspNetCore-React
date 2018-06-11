@@ -4,5 +4,5 @@ root = true
 indent_style = space
 indent_size = 2
 
-[*.cs]
+[*.{cs,cshtml}]
 indent_size = 4

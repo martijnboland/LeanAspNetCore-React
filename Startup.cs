@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -33,6 +36,11 @@ namespace LeanAspNetCore
         {
             if (env.IsDevelopment())
             {
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    ProjectPath = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp"),
+                    HotModuleReplacement = true
+                });
                 app.UseDeveloperExceptionPage();
             }
             else

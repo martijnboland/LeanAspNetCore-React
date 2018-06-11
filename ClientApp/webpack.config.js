@@ -2,12 +2,15 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = (env, argv) => {
+module.exports = (env = {}, argv = {}) => {
   
   const isProd = argv.mode === 'production';
 
   const config = {
-    entry: './src/main.js',
+    mode: argv.mode || 'development', // we default to development when no mode option is passes
+    entry: {
+      main: './js/main.js'
+    }, 
     output: {
       filename: isProd ? '[name].[hash].js' : '[name].js',
       path: path.resolve(__dirname, '../wwwroot/dist'),
@@ -19,8 +22,7 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         filename: path.resolve(__dirname, '../Pages/Shared/_Layout.cshtml'),
-        template: path.resolve(__dirname, '../Pages/Shared/_Layout.template.cshtml'),
-        inject: true
+        template: path.resolve(__dirname, '../Pages/Shared/_Layout.template.cshtml')
       })
     ],
     module:  {
@@ -28,8 +30,7 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: [ 
-            //isProd ?  MiniCssExtractPlugin.loader : 'style-loader', 
-            MiniCssExtractPlugin.loader, 
+            isProd ?  MiniCssExtractPlugin.loader : 'style-loader', 
             'css-loader' 
           ]
         }
