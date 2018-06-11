@@ -13,18 +13,18 @@
   <div class="col-sm-6">
     <form method="post">
       <div class="form-group">
-        <label asp-for="FormData.Email">Email address</label>
-        <input asp-for="FormData.Email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+        <label asp-for="FormData.Email">Email</label>
+        <input asp-for="FormData.Email" type="email" class="form-control" aria-describedby="emailHelp">
         <span asp-validation-for="FormData.Email" class="text-danger small"></span>
       </div>
       <div class="form-group">
         <label asp-for="FormData.Password">Password</label>
-        <input asp-for="FormData.Password" type="password" class="form-control" placeholder="Password">
+        <input asp-for="FormData.Password" type="password" class="form-control">
         <span asp-validation-for="FormData.Password" class="text-danger small"></span>
       </div>
       <div class="form-group">
-        <label asp-for="FormData.ConfirmPassword">Confirm password</label>
-        <input asp-for="FormData.ConfirmPassword" type="password" class="form-control" placeholder="Confirm password">
+        <label asp-for="FormData.ConfirmPassword">Confirm password</label> 
+        <input asp-for="FormData.ConfirmPassword" type="password" class="form-control">
         <span asp-validation-for="FormData.ConfirmPassword" class="text-danger small"></span>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>

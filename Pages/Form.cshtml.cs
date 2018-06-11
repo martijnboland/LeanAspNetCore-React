@@ -20,7 +20,7 @@ namespace LeanAspNetCore.Pages
         {
             if (ModelState.IsValid)
             {
-                Message = "Form was successfully posted";
+                Message = "Form was posted successfully";
             }
             return Page();
         }
