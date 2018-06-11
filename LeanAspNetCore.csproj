@@ -2,13 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <ClientAppFolder>ClientApp\</ClientAppFolder>
-    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <ClientAppFolder>ClientApp</ClientAppFolder>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 
@@ -17,13 +15,18 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
   </ItemGroup>
 
+  <Target Name="EnsureNodeModules" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(ClientAppFolder)\node_modules') ">
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(ClientAppFolder)" Command="npm install" />
+  </Target>
+  
   <Target Name="BuildClientAssets" AfterTargets="ComputeFilesToPublish">
-    <Exec WorkingDirectory="$(ClientAppFolder)" Command="npm install"  />
+    <Exec WorkingDirectory="$(ClientAppFolder)" Command="npm install" />
     <Exec WorkingDirectory="$(ClientAppFolder)" Command="npm run prod" />
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
-      <DistFiles Include="$(ClientAppFolder)wwwroot\dist\**" />
+      <DistFiles Include="$(ClientAppFolder)\wwwroot\dist\**" />
       <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LeanAspNetCore - @ViewData["Title"]</title>
+
+    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
+
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/dist/styles.css" asp-append-version="true" />
+    </environment>
+
+</head>
+
+<body>
+
+    @await Html.PartialAsync("_Header")
+
+    <main role="main" class="container">
+
+        @await Html.PartialAsync("_Title")
+
+        @RenderBody()
+
+    </main>
+
+    <environment names="Development">
+        <script src="~/dist/main.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/dist/main.js" asp-append-version="true"></script>
+    </environment>
+
+</body>
+</html>

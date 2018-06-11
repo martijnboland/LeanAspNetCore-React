@@ -1,10 +1,12 @@
 import '../styles/style.css';
 
 import $ from 'jquery';
-import 'jquery-validation';
-import 'jquery-validation-unobtrusive';
+
 import 'popper.js';
 import 'bootstrap';
+
+import 'jquery-validation';
+import 'jquery-validation-unobtrusive';
 
 $.validator.setDefaults({
   highlight: function (element) {
