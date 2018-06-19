@@ -8,7 +8,8 @@ module.exports = (env = {}, argv = {}) => {
   const config = {
     mode: argv.mode || 'development', // we default to development when no 'mode' arg is passed
     entry: {
-      main: './js/main.js'
+      main: './js/main.js',
+      classic_jquery: './js/classic-jquery.js'
     }, 
     output: {
       filename: '[name].js',
