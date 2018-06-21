@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import App from './react-notes/App';
+
 ReactDOM.render(
-  <h1>Hello, from React!</h1>,
+  <App />,
   document.getElementById('react-notes-app')
 );
