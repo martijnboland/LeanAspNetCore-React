@@ -11,4 +11,6 @@ git clone https://github.com/martijnboland/LeanAspNetCore-React.git
 cd LeanAspNetCore-React
 dotnet run
 ```
+Browse to https://localhost:5001 to see the working app. 
+
 At the first run, it takes a little while before all dependencies are resolved. Just have a little patience. After the first run, things are much faster.
