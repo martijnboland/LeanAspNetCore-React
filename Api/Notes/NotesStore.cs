@@ -7,39 +7,37 @@ using System.Collections.Generic;
 namespace LeanAspNetCore.Api.Notes
 {
     /// <summary>
-    /// Simple in-memory notes store.
+    /// Simple in-memory notes store. Strictly for demo purposes, absolutely not thread-safe.
     /// </summary>
     public class NotesStore
     {
-        private ConcurrentDictionary<string, List<Note>> _notes;
+        private List<Note> _notes;
 
         public NotesStore()
         {
-            this._notes = new ConcurrentDictionary<string, List<Note>>();
+            this._notes = new List<Note>();
         }
 
-        public List<Note> GetAllByUser(string userId)
+        public IEnumerable<Note> GetAll()
         {
-            return _notes.GetOrAdd(userId, new List<Note>());
+            return _notes;
         }
 
-        public Note AddNote(string userId, Note note)
+        public Note AddNote(Note note)
         {
             if (note.Id != null)
             {
                 throw new Exception("Cannot add note with an existing id");
             }
-            var notes = GetAllByUser(userId);
             note.Id = Guid.NewGuid().ToString();
             note.CreatedAt = DateTime.Now;
-            notes.Add(note);
+            _notes.Add(note);
             return note;
         }
 
-        public void RemoveNote(string userId, string noteId)
+        public void RemoveNote(string noteId)
         {
-            var notes = GetAllByUser(userId);
-            notes.RemoveAll(n => n.Id == noteId);
+            _notes.RemoveAll(n => n.Id == noteId);
         }
     }
 }

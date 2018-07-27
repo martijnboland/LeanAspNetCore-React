@@ -1,21 +1,5 @@
-import axios, { AxiosResponse, AxiosError } from 'axios';
+import { AxiosResponse, AxiosError } from 'axios';
 import { FORM_ERROR } from 'final-form';
-
-import { getToken } from './auth';
-
-// Add authorization token to requests.
-axios.interceptors.request.use(config => {
-  if (config.url.indexOf('auth') > -1) {
-    return Promise.resolve(config);
-  }
-  return getToken()
-    .then(token => {
-      config.headers.Authorization = `Bearer ${token}`;
-      return Promise.resolve(config);
-    })
-}, err => {
-  return Promise.reject(err);
-});
 
 export interface IApiResult {
   ok: boolean,

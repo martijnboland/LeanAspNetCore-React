@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 namespace LeanAspNetCore.Api.Notes
 {
     [Route("api/notes")]
-    [Authorize]
     public class NotesController : Controller
     {
         private ILogger<NotesController> _logger;
@@ -22,10 +21,8 @@ namespace LeanAspNetCore.Api.Notes
         [HttpGet]
         public IActionResult Get()
         {
-            string userId = GetUserId();
-            _logger.LogDebug($"User ID: {userId}");
-            var notes = _notesStore.GetAllByUser(userId).OrderByDescending(n => n.CreatedAt);
-            return base.Ok(notes);
+            var notes = _notesStore.GetAll().OrderByDescending(n => n.CreatedAt);
+            return Ok(notes);
         }
         
         [HttpPost]
@@ -33,8 +30,7 @@ namespace LeanAspNetCore.Api.Notes
         {
             if (ModelState.IsValid)
             {
-                var userId = GetUserId();
-                note = _notesStore.AddNote(userId, note);
+                note = _notesStore.AddNote(note);
                 return Created($"api/notes/{note.Id}", note);
             }
             return BadRequest(ModelState);
@@ -43,15 +39,8 @@ namespace LeanAspNetCore.Api.Notes
         [HttpDelete("{noteId}")]
         public IActionResult Remove(string noteId)
         {
-            var userId = GetUserId();
-            _notesStore.RemoveNote(userId, noteId);
+            _notesStore.RemoveNote(noteId);
             return NoContent();
         }
-
-        private string GetUserId()
-        {
-            return User.FindFirst("sub").Value;
-        }
-
     }
 }
