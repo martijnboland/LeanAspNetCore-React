@@ -24,7 +24,7 @@ namespace LeanAspNetCore.Api.Notes
         {
             string userId = GetUserId();
             _logger.LogDebug($"User ID: {userId}");
-            var notes = _notesStore.GetAllByUser(userId);
+            var notes = _notesStore.GetAllByUser(userId).OrderByDescending(n => n.CreatedAt);
             return base.Ok(notes);
         }
         

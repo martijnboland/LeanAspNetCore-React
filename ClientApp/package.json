@@ -10,15 +10,20 @@
   "author": "Martijn Boland",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
+    "classnames": "^2.2.6",
+    "final-form": "^4.8.3",
     "jquery": "^3.3.1",
     "jquery-validation": "^1.17.0",
     "jquery-validation-unobtrusive": "^3.2.10",
     "popper.js": "^1.14.3",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-final-form": "^3.6.5"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.4",
     "@types/react": "^16.4.0",
     "@types/react-dom": "^16.0.6",
     "aspnet-webpack": "^3.0.0",

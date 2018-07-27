@@ -6,6 +6,10 @@
     "target": "es5",
     "jsx": "react",
     "moduleResolution": "node",
-    "sourceMap": true
+    "sourceMap": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ]
   }
 }

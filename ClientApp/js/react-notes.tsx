@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import App from './react-notes/App';
+import Notes from './react-notes/Notes';
 
 ReactDOM.render(
-  <App />,
+  <Notes />,
   document.getElementById('react-notes-app')
 );
