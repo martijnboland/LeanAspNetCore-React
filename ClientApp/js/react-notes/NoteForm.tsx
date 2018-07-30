@@ -4,11 +4,11 @@ import { TextInput } from '../components/TextInput';
 import { TextArea } from '../components/TextArea';
 import { Note } from './models';
 
-interface INoteFormProps {
+interface NoteFormProps {
   handleSave: (note: Note) => Promise<any>
 }
 
-const INoteForm: React.SFC<INoteFormProps> = (props) => {
+const NoteForm: React.SFC<NoteFormProps> = (props) => {
   
   return (
     <Form
@@ -33,4 +33,4 @@ const INoteForm: React.SFC<INoteFormProps> = (props) => {
   );
 };
 
-export default INoteForm;
+export default NoteForm;
