@@ -4,7 +4,3 @@ export interface Note {
   content: string,
   createdAt: Date
 }
-
-export interface AuthResult {
-  token: string;
-}

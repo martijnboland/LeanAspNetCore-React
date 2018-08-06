@@ -9,12 +9,10 @@ namespace LeanAspNetCore.Api.Notes
     [Route("api/notes")]
     public class NotesController : Controller
     {
-        private ILogger<NotesController> _logger;
         private NotesStore _notesStore;
 
-        public NotesController(ILogger<NotesController> logger, NotesStore notesStore)
+        public NotesController(NotesStore notesStore)
         {
-             _logger = logger;
              _notesStore = notesStore;
         }
 
