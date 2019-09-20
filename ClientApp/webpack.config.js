@@ -23,7 +23,10 @@ module.exports = (env = {}, argv = {}) => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: 'styles.css'
+        filename: 'styles.css',
+        options: {
+          hmr: ! isProd
+        }
       })
     ],
     module:  {
@@ -46,6 +49,16 @@ module.exports = (env = {}, argv = {}) => {
   
   if (! isProd) {
     config.devtool = 'eval-source-map';
+    config.devServer = {
+      index: '', // specify to enable root proxying
+      contentBase: path.resolve(__dirname, '../wwwroot/dist'),
+      proxy: {
+        context: () => true,
+        target: 'https://localhost:5001',
+        secure: false
+      },
+      hot: true
+    }
   }
 
   return config;
