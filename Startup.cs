@@ -1,24 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.IdentityModel.Tokens.Jwt;
 using LeanAspNetCore.Api.Notes;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
-using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 
 namespace LeanAspNetCore
@@ -50,11 +36,6 @@ namespace LeanAspNetCore
         {
             if (env.IsDevelopment())
             {
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                {
-                    ProjectPath = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp"),
-                    HotModuleReplacement = true
-                });
                 app.UseDeveloperExceptionPage();
             }
             else

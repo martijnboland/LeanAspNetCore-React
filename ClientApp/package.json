@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "webpack --mode development --watch --progress",
+    "start": "webpack-dev-server",
+    "dev": "webpack --mode development --watch --progress",
     "build": "webpack --mode development --progress --profile",
     "prod": "rimraf ../wwwroot/dist && webpack --mode production --progress"
   },
@@ -27,7 +28,6 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/webpack-env": "^1.14.0",
-    "aspnet-webpack": "^3.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
@@ -37,7 +37,6 @@
     "typescript": "^3.6.3",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-middleware": "^3.7.1",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-dev-server": "^3.8.1"
   }
 }
