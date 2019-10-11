@@ -11,7 +11,7 @@ git clone https://github.com/martijnboland/LeanAspNetCore-React.git
 cd LeanAspNetCore-React
 dotnet run
 ```
-then in a new console:
+then, when the .NET Core app is running, open up a new console and enter:
 ```
 cd ClientApp
 npm start
