@@ -55,7 +55,7 @@ class Notes extends React.Component<any, INotesState> {
     return (
       <div className="row">
         <div className="col-sm-6">
-          <h4>Add note</h4>
+          <h4>Add note!</h4>
           <NoteForm handleSave={this.createNote} />
         </div>
         <div className="col-sm-6">
