@@ -23,10 +23,7 @@ module.exports = (env = {}, argv = {}) => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: 'styles.css',
-        options: {
-          hmr: ! isProd
-        }
+        filename: 'styles.css'
       })
     ],
     module:  {
@@ -40,7 +37,7 @@ module.exports = (env = {}, argv = {}) => {
         },
         {
           test: /\.tsx?$/,
-          use: 'awesome-typescript-loader',
+          use: 'ts-loader',
           exclude: /node_modules/
         }
       ]
@@ -51,6 +48,7 @@ module.exports = (env = {}, argv = {}) => {
     config.devtool = 'eval-source-map';
     config.devServer = {
       index: '', // specify to enable root proxying
+      publicPath: '/dist',
       contentBase: path.resolve(__dirname, '../wwwroot/dist'),
       proxy: {
         context: () => true,

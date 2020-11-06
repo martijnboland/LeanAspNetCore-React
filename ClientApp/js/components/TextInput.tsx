@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-export const TextInput: React.SFC<any> = ({ input, meta, label, type, ...rest }) => {
+export const TextInput: React.FC<any> = ({ input, meta, label, type, ...rest }) => {
 
   const inputType = type || 'text';
 

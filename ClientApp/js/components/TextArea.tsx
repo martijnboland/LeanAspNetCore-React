@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-export const TextArea: React.SFC<any> = ({ input, meta, label, type, ...rest }) => {
+export const TextArea: React.FC<any> = ({ input, meta, label, type, ...rest }) => {
 
   return (
     <div className="form-group">

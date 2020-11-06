@@ -6,7 +6,7 @@ interface NoteCardProps {
   handleDelete: (note: Note) => Promise<any>
 }
 
-const NoteCard: React.SFC<NoteCardProps> = ({ note, handleDelete }) => {
+const NoteCard: React.FC<NoteCardProps> = ({ note, handleDelete }) => {
   const createdAtString = new Date(note.createdAt).toLocaleString();
   return (
     <div className="card mb-4">

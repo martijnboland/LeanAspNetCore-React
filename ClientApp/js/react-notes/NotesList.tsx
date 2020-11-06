@@ -7,7 +7,7 @@ interface NotesListProps {
   handleDelete: (note: Note) => Promise<any>
 }
 
-const NotesList: React.SFC<NotesListProps> = ({ notes, handleDelete }) => {
+const NotesList: React.FC<NotesListProps> = ({ notes, handleDelete }) => {
   return (
     notes.length > 0 
       ? 
