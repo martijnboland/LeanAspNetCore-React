@@ -11,7 +11,7 @@
   "author": "Martijn Boland",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "classnames": "^2.2.6",
     "final-form": "^4.20.1",
