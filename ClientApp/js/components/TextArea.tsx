@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
 export const TextArea: React.FC<any> = ({ input, meta, label, type, ...rest }) => {
 
