@@ -24,7 +24,7 @@
   
   <Target Name="BuildClientAssets" AfterTargets="ComputeFilesToPublish">
     <Exec WorkingDirectory="$(ClientAppFolder)" Command="npm install" />
-    <Exec WorkingDirectory="$(ClientAppFolder)" Command="npm run prod" />
+    <Exec WorkingDirectory="$(ClientAppFolder)" Command="npm run build" />
 
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>

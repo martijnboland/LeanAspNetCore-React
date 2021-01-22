@@ -3,6 +3,8 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 
 export default defineConfig({
   build: {
+    outDir: '../wwwroot/dist',
+    emptyOutDir: true,
     manifest: true,
     rollupOptions: {
       input: {

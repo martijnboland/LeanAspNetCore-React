@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@inject LeanAspNetCore.TagHelpers.ManifestReader ManifestReader
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -11,7 +12,7 @@
     <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
 
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="~/dist/styles.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/dist/@(ManifestReader.ResolveHashedPath("main.css"))" />
     </environment>
 
 </head>
@@ -33,7 +34,7 @@
         <script type="module" src="~/js/main.js"></script>
     </environment>
     <environment names="Staging,Production">
-        <script src="~/dist/main.js" asp-append-version="true"></script>
+        <script type="module" src="~/dist/@(ManifestReader.ResolveHashedPath("main.js"))"></script>
     </environment>
 
     @RenderSection("scripts", false)
