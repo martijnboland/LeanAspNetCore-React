@@ -14,5 +14,10 @@ export default defineConfig({
   },
   plugins: [
     reactRefresh()
-  ]
+  ],
+  server: {
+    hmr: {
+      protocol: 'ws'
+    }
+  }
 })

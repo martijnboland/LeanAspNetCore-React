@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "echo Starting the development server && vite",
     "dev": "vite",
     "build": "vite build"
   },
