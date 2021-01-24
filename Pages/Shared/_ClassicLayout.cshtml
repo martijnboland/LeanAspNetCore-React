@@ -5,13 +5,13 @@
 
 @RenderBody()
 
-@section scripts 
+@section scripts
 {
     <environment names="Development">
-        <script src="~/dist/classic_jquery.js"></script>
+        <script type="module" src="~/js/classic-jquery.js"></script>
     </environment>
     <environment names="Staging,Production">
-        <script src="~/dist/classic_jquery.js" asp-append-version="true"></script>
+        <script type="module" asp-src-include="~/dist/assets/classic-jquery.*.js"></script>
     </environment>
 
     @RenderSection("scripts", required: false)

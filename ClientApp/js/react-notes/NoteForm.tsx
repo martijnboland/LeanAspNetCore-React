@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Form, Field } from 'react-final-form';
 import { TextInput } from '../components/TextInput';
 import { TextArea } from '../components/TextArea';
@@ -8,7 +8,7 @@ interface NoteFormProps {
   handleSave: (note: Note) => Promise<any>
 }
 
-const NoteForm: React.SFC<NoteFormProps> = (props) => {
+const NoteForm: React.FC<NoteFormProps> = (props) => {
   
   return (
     <Form
@@ -16,7 +16,7 @@ const NoteForm: React.SFC<NoteFormProps> = (props) => {
       render={({ handleSubmit, pristine, submitting, submitError, form }) => {
         
         return (
-          <form onSubmit={(e) => handleSubmit(e).then(res => { 
+          <form onSubmit={(e) => handleSubmit(e)?.then(res => { 
             if (!res) {
               form.reset();
             }

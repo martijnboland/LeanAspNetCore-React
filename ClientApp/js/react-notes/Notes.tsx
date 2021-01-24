@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import NoteForm from './NoteForm';
 import NotesList from './NotesList';
 import { Note } from './models';

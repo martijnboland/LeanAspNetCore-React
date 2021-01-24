@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { Note } from './models';
 import NoteCard from './NoteCard';
+import emptyFolder from '../../images/empty-folder.png';
 
 interface NotesListProps {
   notes: Note[],
@@ -15,7 +16,12 @@ const NotesList: React.FC<NotesListProps> = ({ notes, handleDelete }) => {
         {notes.map(n => <NoteCard key={n.id} note={n} handleDelete={handleDelete} />)}    
       </div>
       :
-      <em>There are currently no notes</em>
+      <div>
+        <div className="mb-1">
+          <img src={emptyFolder} width={125} height={125} />
+        </div>
+        <em>There are currently no notes</em>
+      </div>
   );
 };
 
