@@ -1,5 +1,4 @@
 ﻿using LeanAspNetCore.Api.Notes;
-using LeanAspNetCore.TagHelpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -29,8 +28,6 @@ namespace LeanAspNetCore
                     options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
             services.AddRazorPages();
-            services.AddSingleton<ManifestReader>();
-            services.AddSpaStaticFiles(c => c.RootPath = "wwwroot/dist");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +50,6 @@ namespace LeanAspNetCore
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
             });
-            app.UseSpaStaticFiles();
             if (env.IsDevelopment())
             {
                 app.UseSpa(spa =>

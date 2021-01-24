@@ -1,5 +1,4 @@
 @page
-@inject LeanAspNetCore.TagHelpers.ManifestReader ManifestReader
 @{
     Layout = "Shared/_Layout.cshtml";
     ViewData["Title"] = "React Notes";
@@ -20,6 +19,6 @@
         <script type="module" src="~/js/react-notes.tsx"></script>
     </environment>
     <environment names="Staging,Production">
-        <script type="module" src="~/dist/@(ManifestReader.ResolveHashedPath("react-notes.js"))"></script>
+        <script type="module" asp-src-include="~/dist/assets/react-notes.*.js"></script>
     </environment>
 }

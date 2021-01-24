@@ -1,5 +1,4 @@
 <!-- Nested layout -->
-@inject LeanAspNetCore.TagHelpers.ManifestReader ManifestReader
 @{
     Layout = "_Layout";
 }
@@ -12,7 +11,7 @@
         <script type="module" src="~/js/classic-jquery.js"></script>
     </environment>
     <environment names="Staging,Production">
-        <script type="module" src="~/dist/@(ManifestReader.ResolveHashedPath("classic-jquery.js"))"></script>
+        <script type="module" asp-src-include="~/dist/assets/classic-jquery.*.js"></script>
     </environment>
 
     @RenderSection("scripts", required: false)
