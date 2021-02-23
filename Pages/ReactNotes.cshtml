@@ -10,13 +10,13 @@
 {
     <environment names="Development">
         <script type="module">
-            import RefreshRuntime from '@Url.Content("~/@react-refresh")'
+            import RefreshRuntime from '@Url.Content("~/dist/@react-refresh")'
             RefreshRuntime.injectIntoGlobalHook(window)
             window.$RefreshReg$ = () => { }
             window.$RefreshSig$ = () => (type) => type
             window.__vite_plugin_react_preamble_installed__ = true
         </script>
-        <script type="module" src="~/js/react-notes.tsx"></script>
+        <script type="module" src="~/dist/js/react-notes.tsx"></script>
     </environment>
     <environment names="Staging,Production">
         <script type="module" asp-src-include="~/dist/assets/react-notes.*.js"></script>
