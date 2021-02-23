@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 
 export default defineConfig({
-  base: '/dist/',
+  base: '/ClientApp/',
   build: {
     outDir: '../wwwroot/dist',
     emptyOutDir: true,
