@@ -1,5 +1,7 @@
 # LeanAspNetCore-React
-A 'lean' ASP.NET Core 5.0 app that uses Razor Pages for server pages and React for some of the client functionality. The main goal of this example is to show how ASP.NET Core and modern client-side development can be combined in a simple, understandable way.
+A 'lean' ASP.NET Core 5.0 app that uses Razor Pages for server pages and React for some of the client functionality. The main goal of this example is to show how ASP.NET Core and modern client-side development can be combined in a simple, understandable way. 
+
+Originally it leveraged webpack and Microsoft.AspNetCore.SpaServices. Currently, it uses Vite for client-side builds and Microsoft.AspNetCore.SpaServices.Extensions for integration.
 
 ## Prerequisites
 .NET 5.0 (or higher) SDK
