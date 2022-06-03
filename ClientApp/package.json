@@ -15,7 +15,7 @@
     "classnames": "^2.3.1",
     "final-form": "^4.20.6",
     "jquery": "^3.6.0",
-    "jquery-validation": "^1.19.3",
+    "jquery-validation": "^1.19.4",
     "jquery-validation-unobtrusive": "^3.2.12",
     "popper.js": "^1.16.1",
     "react": "^17.0.2",
