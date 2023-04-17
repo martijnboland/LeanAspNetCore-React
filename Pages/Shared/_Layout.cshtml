@@ -11,7 +11,7 @@
     <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
 
     <environment names="Staging,Production">
-        <link rel="stylesheet" asp-href-include="~/dist/assets/main.*.css" />
+        <link rel="stylesheet" asp-href-include="~/dist/assets/main-*.css" />
     </environment>
 
 </head>
@@ -33,7 +33,7 @@
         <script type="module" src="~/dist/js/main.js"></script>
     </environment>
     <environment names="Staging,Production">
-        <script type="module" asp-src-include="~/dist/assets/main.*.js"></script>
+        <script type="module" asp-src-include="~/dist/assets/main-*.js"></script>
     </environment>
 
     @RenderSection("scripts", false)
